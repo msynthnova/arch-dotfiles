@@ -51,6 +51,6 @@ tar xpvf stage3.tar.xz --xattrs-include='*.*' --numeric-owner
 rm -rf stage3.tar.xz
 
 curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/make.conf -o /mnt/gentoo/etc/portage/make.conf
-
+curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/repos.conf -o /mnt/gentoo/etc/portage/repos.conf
 ```
 ---
