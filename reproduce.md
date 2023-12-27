@@ -1,3 +1,7 @@
+### resources
+- [https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet#Package_management](https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet#Package_management)
+---
+
 ### partition disk
 ```
 wipefs -a /dev/nvme0n1
@@ -69,6 +73,7 @@ mount -l
 
 chroot /mnt/gentoo bin/bash
 source /etc/profile
+export PS1="(chroot) ${PS1}"
 
 mkdir /efi
 mount /dev/nvme0n1p1 /efi
