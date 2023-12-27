@@ -59,6 +59,7 @@ curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/make.conf
 
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
 curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/gentoo.conf -o /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/package.use -o /etc/portage/package.use
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
 mount --types proc /proc /mnt/gentoo/proc
