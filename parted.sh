@@ -17,7 +17,6 @@ mkswap /dev/nvme0n1p2
 mkfs.ext4 /dev/nvme0n1p3
 
 # mount
-mount --mkdir /dev/nvme0n1p1 /mnt/efi
 swapon /dev/nvme0n1p2
 mount /dev/nvme0n1p3 /mnt
 
