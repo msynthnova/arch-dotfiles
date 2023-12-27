@@ -49,5 +49,8 @@ timedatectl
 curl https://distfiles.gentoo.org/releases/amd64/autobuilds/20231224T164659Z/stage3-amd64-nomultilib-openrc-20231224T164659Z.tar.xz -o stage3.tar.xz
 tar xpvf stage3.tar.xz --xattrs-include='*.*' --numeric-owner
 rm -rf stage3.tar.xz
+
+curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/make.conf -o /mnt/gentoo/etc/portage/make.conf
+
 ```
 ---
