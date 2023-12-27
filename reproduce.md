@@ -1,5 +1,4 @@
 ### partition disk
-
 ```
 wipefs -a /dev/nvme0n1
 parted --script /dev/nvme0n1 mklabel gpt
@@ -20,7 +19,6 @@ ls -l /dev/disk/by-path
 ---
 
 ### filesystem types
-
 ```
 mkfs.fat -F 32 /dev/nvme0n1p1
 mkswap /dev/nvme0n1p2
@@ -31,7 +29,6 @@ lsblk -o PATH,FSTYPE /dev/nvme0n1
 ---
 
 ### mount partition
-
 ```
 mkdir -p /mnt/gentoo
 mount /dev/nvme0n1p3 /mnt/gentoo
@@ -42,7 +39,6 @@ lsblk -o PATH,MOUNTPOINT /dev/nvme0n1
 ---
 
 ### stage3
-
 ```
 timedatectl
 
@@ -50,7 +46,39 @@ curl https://distfiles.gentoo.org/releases/amd64/autobuilds/20231224T164659Z/sta
 tar xpvf stage3.tar.xz --xattrs-include='*.*' --numeric-owner
 rm -rf stage3.tar.xz
 
+```
+---
+
+### install base
+```
 curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/make.conf -o /mnt/gentoo/etc/portage/make.conf
-curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/repos.conf -o /mnt/gentoo/etc/portage/repos.conf
+
+mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+curl https://raw.githubusercontent.com/msynthnova/gentoo-dotfiles/main/gentoo.conf -o /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+
+mount -l
+
+chroot /mnt/gentoo bin/bash
+source /etc/profile
+
+mkdir /efi
+mount /dev/nvme0n1p1 /efi
+
+emerge-webrsync
+emerge --sync
+eselect news list
+eselect profile list
+eselect profile set 15
+
+emerge --ask --verbose --update --deep --newuse @world
 ```
 ---
