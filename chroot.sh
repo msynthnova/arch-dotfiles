@@ -16,8 +16,9 @@ echo "root ALL=(ALL:ALL) ALL" > /etc/sudoers
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 echo "@includedir /etc/sudoers.d" >> /etc/sudoers
 
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable iwd
+systemctl enable ModemManager
