@@ -1,0 +1,7 @@
+- font setup
+sudo mkdir --p /usr/local/share/fonts/ttf
+sudo cp fonts/* /usr/local/share/fonts/ttf
+fc-cache -vf
+
+- change shell
+chsh
