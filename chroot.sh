@@ -16,7 +16,10 @@ echo "root ALL=(ALL:ALL) ALL" > /etc/sudoers
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 echo "@includedir /etc/sudoers.d" >> /etc/sudoers
 
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub
+mkdir /boot/efi
+mount /dev/nvme0n1p1 /boot/efi
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
