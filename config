@@ -1,0 +1,18 @@
+{
+  "height": 20,
+  "modules-left": ["clock"],
+  "modules-right": ["cpu", "memory"],
+  "clock": {
+    "interval": 60,
+    "timezone": "America/Chicago",
+    "format": "{:%H:%M}",
+  },
+  "cpu": {
+     "interval": 1,
+     "format": "CPU: {usage}% ",
+  },
+  "memory": {
+     "interval": 1,
+     "format": "RAM: {used}%",
+  },
+}

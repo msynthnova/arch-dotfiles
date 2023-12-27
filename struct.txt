@@ -5,3 +5,6 @@ fc-cache -vf
 
 - change shell
 chsh
+
+- font test
+https://www.alanwood.net/unicode

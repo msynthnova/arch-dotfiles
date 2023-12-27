@@ -1,0 +1,16 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Fira Code, monospace;
+  font-size: 10px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #000000;
+  color: white;
+}
+
+#cpu, #clock, #memory {
+  padding: 0 10px;
+}
