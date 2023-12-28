@@ -21,5 +21,5 @@ swapon /dev/nvme0n1p2
 mount /dev/nvme0n1p3 /mnt
 
 # init
-pacstrap -K /mnt base linux linux-firmware sudo networkmanager git neovim intel-ucode grub efibootmgr iwd usb_modeswitch modemmanager
+pacstrap -K /mnt base linux linux-firmware sudo networkmanager git neovim intel-ucode grub efibootmgr iwd
 genfstab -U /mnt >> /mnt/etc/fstab
