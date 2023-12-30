@@ -12,5 +12,5 @@ window#waybar {
 }
 
 #cpu, #clock, #memory {
-  padding: 0 10px;
+  padding: 2px 10px;
 }
