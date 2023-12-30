@@ -13,6 +13,6 @@
   },
   "memory": {
      "interval": 1,
-     "format": "RAM: {used}%",
+     "format": "RAM: {used}GB",
   },
 }
