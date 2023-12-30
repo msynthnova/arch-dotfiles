@@ -1,2 +1,2 @@
 alias vim="nvim"
-export PS1="ɞ %~ >"
+export PS1="ɞ %~ > "

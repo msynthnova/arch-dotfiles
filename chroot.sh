@@ -28,3 +28,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 systemctl enable iwd
+systemctl enable bluetooth
