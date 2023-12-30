@@ -10,14 +10,10 @@ chsh
 https://www.alanwood.net/unicode
 
 - sound
-https://srobb.net/pipewire.html
 https://wiki.archlinux.org/title/WirePlumber
 
-pw-cli list-objects Node
-aplay -l
 wpctl status
 wpctl set-default 12
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 100
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 0
 wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle

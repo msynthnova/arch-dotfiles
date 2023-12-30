@@ -1,7 +1,13 @@
 {
-  "height": 20,
-  "modules-left": ["clock"],
-  "modules-right": ["cpu", "memory"],
+  "height": 26,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["wireplumber", "cpu", "memory"],
+  "wireplumber": {
+    "format": " | VOLUME: {volume}%",
+    "format-muted": "VOLUME: MUTED",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  },
   "clock": {
     "interval": 60,
     "timezone": "America/Chicago",
@@ -9,10 +15,10 @@
   },
   "cpu": {
      "interval": 1,
-     "format": "CPU: {usage}% ",
+     "format": " | CPU: {usage}%",
   },
   "memory": {
      "interval": 1,
-     "format": "RAM: {used}GB",
+     "format": " | RAM: {used}GB",
   },
 }
