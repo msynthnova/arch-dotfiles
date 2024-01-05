@@ -27,7 +27,8 @@ bar {
 
 client.focused $primary $primary $text $primary $primary
 client.unfocused $bg $bg $text $bg $bg
-
+default_border none
+default_border pixel 2
 font pango:SF Mono Regular 8
 
 bindsym $mod+Return exec $term
