@@ -18,6 +18,7 @@ output HDMI-A-4 mode 3840x2160 position 3840 0 bg $wallpaper fill
 
 bar {
   font $font 
+  status_command while ~/.config/sway/status.sh; do sleep 1; done
   colors {
     background $bg
     focused_workspace $primary $primary $text 
